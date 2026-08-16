@@ -3,6 +3,6 @@
   "javascript-sdk": "0.3.0",
   "go-sdk": "0.3.0",
   "java-sdk": "0.1.0",
-  "php-sdk": "0.2.0",
+  "php-sdk": "0.2.1",
   "ruby-sdk": "0.3.0"
 }
