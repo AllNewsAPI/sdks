@@ -178,7 +178,7 @@ func (c *Client) doRequest(endpoint string, params url.Values) ([]byte, error) {
 	if err != nil {
 		return nil, &APIError{StatusCode: 500, Message: fmt.Sprintf("Request failed: %s", err.Error())}
 	}
-	defer resp.Body.Close()
+	defer func() { _ = resp.Body.Close() }()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
