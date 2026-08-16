@@ -91,9 +91,9 @@ describe('NewsAPI Client', () => {
       expect((result as typeof sampleSearchResponse).currentPage).toBe(1);
       expect((result as typeof sampleSearchResponse).articles[0].title).toBe('Test Article');
 
-      // Verify the URL targets /v1/headlines
+      // Verify the URL targets /headlines
       const fetchCall = mockFetch.mock.calls[0];
-      expect(fetchCall[0]).toContain('/v1/headlines');
+      expect(fetchCall[0]).toContain('/headlines');
     });
   });
 
@@ -249,7 +249,7 @@ describe('NewsAPI Client', () => {
       await client.search({ q: 'test' });
 
       const fetchCall = mockFetch.mock.calls[0];
-      expect(fetchCall[0]).toContain('https://custom.api.com/v1/search');
+      expect(fetchCall[0]).toContain('https://custom.api.com/search');
     });
   });
 });

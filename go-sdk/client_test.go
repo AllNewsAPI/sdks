@@ -9,8 +9,8 @@ import (
 
 func TestSearch(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/v1/search" {
-			t.Errorf("expected path /v1/search, got %s", r.URL.Path)
+		if r.URL.Path != "/search" {
+			t.Errorf("expected path /search, got %s", r.URL.Path)
 		}
 		if r.URL.Query().Get("apikey") != "test-key" {
 			t.Errorf("expected apikey=test-key, got %s", r.URL.Query().Get("apikey"))
@@ -68,8 +68,8 @@ func TestSearch(t *testing.T) {
 
 func TestHeadlines(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/v1/headlines" {
-			t.Errorf("expected path /v1/headlines, got %s", r.URL.Path)
+		if r.URL.Path != "/headlines" {
+			t.Errorf("expected path /headlines, got %s", r.URL.Path)
 		}
 		if r.URL.Query().Get("lang") != "en,fr" {
 			t.Errorf("expected lang=en,fr, got %s", r.URL.Query().Get("lang"))
@@ -125,8 +125,8 @@ func TestHeadlines(t *testing.T) {
 
 func TestUsage(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/v1/usage" {
-			t.Errorf("expected path /v1/usage, got %s", r.URL.Path)
+		if r.URL.Path != "/usage" {
+			t.Errorf("expected path /usage, got %s", r.URL.Path)
 		}
 		if r.URL.Query().Get("apikey") != "test-key" {
 			t.Errorf("expected apikey=test-key, got %s", r.URL.Query().Get("apikey"))
@@ -174,8 +174,8 @@ func TestUsage(t *testing.T) {
 func TestSearchRaw(t *testing.T) {
 	csvData := "title,description\n\"Go Released\",\"New version\"\n"
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/v1/search" {
-			t.Errorf("expected path /v1/search, got %s", r.URL.Path)
+		if r.URL.Path != "/search" {
+			t.Errorf("expected path /search, got %s", r.URL.Path)
 		}
 		if r.URL.Query().Get("format") != "csv" {
 			t.Errorf("expected format=csv, got %s", r.URL.Query().Get("format"))

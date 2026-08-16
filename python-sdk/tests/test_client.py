@@ -289,4 +289,4 @@ class TestCustomBaseUrl:
         request_obj = call_args[0][0]
         actual_url = request_obj.full_url
         assert actual_url.startswith(custom_url)
-        assert "/v1/search" in actual_url
+        assert "/search" in actual_url

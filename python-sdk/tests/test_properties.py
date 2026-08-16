@@ -288,8 +288,8 @@ class TestProperty10BaseUrlPropagation:
 
         expected_prefix = base_url.rstrip("/")
         assert captured_url is not None
-        assert captured_url.startswith(expected_prefix + "/v1/search"), (
-            f"URL '{captured_url}' does not start with '{expected_prefix}/v1/search'"
+        assert captured_url.startswith(expected_prefix + "/search"), (
+            f"URL '{captured_url}' does not start with '{expected_prefix}/search'"
         )
 
     @given(base_url=base_url_strategy)
@@ -309,8 +309,8 @@ class TestProperty10BaseUrlPropagation:
 
         expected_prefix = base_url.rstrip("/")
         assert captured_url is not None
-        assert captured_url.startswith(expected_prefix + "/v1/headlines"), (
-            f"URL '{captured_url}' does not start with '{expected_prefix}/v1/headlines'"
+        assert captured_url.startswith(expected_prefix + "/headlines"), (
+            f"URL '{captured_url}' does not start with '{expected_prefix}/headlines'"
         )
 
     @given(base_url=base_url_strategy)
@@ -330,8 +330,8 @@ class TestProperty10BaseUrlPropagation:
 
         expected_prefix = base_url.rstrip("/")
         assert captured_url is not None
-        assert captured_url.startswith(expected_prefix + "/v1/usage"), (
-            f"URL '{captured_url}' does not start with '{expected_prefix}/v1/usage'"
+        assert captured_url.startswith(expected_prefix + "/usage"), (
+            f"URL '{captured_url}' does not start with '{expected_prefix}/usage'"
         )
 
 

@@ -353,7 +353,7 @@ func TestPropertyBaseURLPropagation(t *testing.T) {
 		if err != nil {
 			return false
 		}
-		if !strings.Contains(capturedURL, "/v1/search") {
+		if !strings.Contains(capturedURL, "/search") {
 			return false
 		}
 
@@ -363,7 +363,7 @@ func TestPropertyBaseURLPropagation(t *testing.T) {
 		if err != nil {
 			return false
 		}
-		if !strings.Contains(capturedURL, "/v1/headlines") {
+		if !strings.Contains(capturedURL, "/headlines") {
 			return false
 		}
 
@@ -385,7 +385,7 @@ func TestPropertyBaseURLPropagation(t *testing.T) {
 		if err != nil {
 			return false
 		}
-		if !strings.Contains(capturedURL, "/v1/usage") {
+		if !strings.Contains(capturedURL, "/usage") {
 			return false
 		}
 
