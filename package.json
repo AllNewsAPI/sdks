@@ -16,10 +16,10 @@
   },
   "lint-staged": {
     "python-sdk/src/**/*.py": [
-      "bash -c 'cd python-sdk && ruff check --fix'"
+      "bash -c 'cd python-sdk && python3 -m ruff check --fix'"
     ],
     "python-sdk/tests/**/*.py": [
-      "bash -c 'cd python-sdk && ruff check --fix'"
+      "bash -c 'cd python-sdk && python3 -m ruff check --fix'"
     ],
     "javascript-sdk/src/**/*.ts": [
       "bash -c 'cd javascript-sdk && npx eslint --fix'",
