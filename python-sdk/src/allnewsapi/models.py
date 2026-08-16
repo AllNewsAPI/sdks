@@ -1,7 +1,6 @@
 """AllNewsAPI response models."""
 
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass
@@ -48,7 +47,7 @@ class SearchResponse:
 
     total_articles: int
     current_page: int
-    next_page: Optional[int]
+    next_page: int | None
     articles: list[Article]
 
 

@@ -98,9 +98,7 @@ class NewsAPI:
                 continue
             if isinstance(value, (list, tuple)):
                 serialized[key] = ",".join(str(v) for v in value)
-            elif isinstance(value, datetime):
-                serialized[key] = value.isoformat()
-            elif isinstance(value, date):
+            elif isinstance(value, (datetime, date)):
                 serialized[key] = value.isoformat()
             elif isinstance(value, bool):
                 serialized[key] = "true" if value else "false"

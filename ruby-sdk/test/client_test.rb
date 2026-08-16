@@ -35,7 +35,7 @@ class ClientTest < Minitest::Test
       ]
     }.to_json
 
-    stub_request(:get, /api\.allnewsapi\.com\/v1\/search/)
+    stub_request(:get, /api\.allnewsapi\.com\/search/)
       .to_return(body: json_body, status: 200, headers: { 'Content-Type' => 'application/json' })
 
     result = @client.search(q: 'technology')
@@ -76,7 +76,7 @@ class ClientTest < Minitest::Test
       ]
     }.to_json
 
-    stub_request(:get, /api\.allnewsapi\.com\/v1\/headlines/)
+    stub_request(:get, /api\.allnewsapi\.com\/headlines/)
       .to_return(body: json_body, status: 200, headers: { 'Content-Type' => 'application/json' })
 
     result = @client.headlines(lang: 'en', country: 'gb')
@@ -96,7 +96,7 @@ class ClientTest < Minitest::Test
       'requestsUsed30Days' => 4500
     }.to_json
 
-    stub_request(:get, /api\.allnewsapi\.com\/v1\/usage/)
+    stub_request(:get, /api\.allnewsapi\.com\/usage/)
       .to_return(body: json_body, status: 200, headers: { 'Content-Type' => 'application/json' })
 
     result = @client.usage
@@ -112,7 +112,7 @@ class ClientTest < Minitest::Test
   def test_csv_returns_raw_string
     csv_body = "title,description,url\nTest,A test,https://example.com\n"
 
-    stub_request(:get, /api\.allnewsapi\.com\/v1\/search/)
+    stub_request(:get, /api\.allnewsapi\.com\/search/)
       .to_return(body: csv_body, status: 200, headers: { 'Content-Type' => 'text/csv' })
 
     result = @client.search(q: 'test', format: 'csv')
@@ -124,7 +124,7 @@ class ClientTest < Minitest::Test
   def test_error_400_with_json_body
     error_body = { 'detail' => { 'message' => 'Missing required parameter: q' } }.to_json
 
-    stub_request(:get, /api\.allnewsapi\.com\/v1\/search/)
+    stub_request(:get, /api\.allnewsapi\.com\/search/)
       .to_return(body: error_body, status: 400, headers: { 'Content-Type' => 'application/json' })
 
     error = assert_raises(AllNewsAPI::Error) do
@@ -136,7 +136,7 @@ class ClientTest < Minitest::Test
   end
 
   def test_error_401_default_message
-    stub_request(:get, /api\.allnewsapi\.com\/v1\/search/)
+    stub_request(:get, /api\.allnewsapi\.com\/search/)
       .to_return(body: 'Not JSON', status: 401, headers: { 'Content-Type' => 'text/plain' })
 
     error = assert_raises(AllNewsAPI::Error) do
@@ -150,7 +150,7 @@ class ClientTest < Minitest::Test
   def test_error_429
     error_body = { 'detail' => { 'message' => 'Rate limit exceeded' } }.to_json
 
-    stub_request(:get, /api\.allnewsapi\.com\/v1\/search/)
+    stub_request(:get, /api\.allnewsapi\.com\/search/)
       .to_return(body: error_body, status: 429, headers: { 'Content-Type' => 'application/json' })
 
     error = assert_raises(AllNewsAPI::Error) do
@@ -162,7 +162,7 @@ class ClientTest < Minitest::Test
   end
 
   def test_network_error
-    stub_request(:get, /api\.allnewsapi\.com\/v1\/search/)
+    stub_request(:get, /api\.allnewsapi\.com\/search/)
       .to_raise(SocketError.new('getaddrinfo: Name or service not known'))
 
     error = assert_raises(AllNewsAPI::Error) do
@@ -196,7 +196,7 @@ class ClientTest < Minitest::Test
 
     json_body = { 'totalArticles' => 0, 'currentPage' => 1, 'nextPage' => nil, 'articles' => [] }.to_json
 
-    stub_request(:get, /custom-api\.example\.com\/v1\/search/)
+    stub_request(:get, /custom-api\.example\.com\/search/)
       .to_return(body: json_body, status: 200, headers: { 'Content-Type' => 'application/json' })
 
     result = client.search(q: 'test')

@@ -33,3 +33,13 @@ BugTracker = "https://github.com/AllNewsAPI/python-sdk/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "SIM"]
+ignore = ["SIM114"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["DTZ001", "PLC0206", "E501"]

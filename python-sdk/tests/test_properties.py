@@ -14,7 +14,6 @@ from hypothesis import strategies as st
 from allnewsapi.client import NewsAPI
 from allnewsapi.exceptions import NewsAPIError
 
-
 # --- Strategies ---
 
 # Supported query parameters for search/headlines (excluding format and apikey)

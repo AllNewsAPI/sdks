@@ -105,7 +105,7 @@ public class NewsAPITest {
                 + "]"
                 + "}";
 
-        HttpServer server = createMockServer("/v1/search", 200, responseJson);
+        HttpServer server = createMockServer("/search", 200, responseJson);
         try {
             int port = server.getAddress().getPort();
             String baseUrl = "http://localhost:" + port;
@@ -174,7 +174,7 @@ public class NewsAPITest {
                 + "]"
                 + "}";
 
-        HttpServer server = createMockServer("/v1/headlines", 200, responseJson);
+        HttpServer server = createMockServer("/headlines", 200, responseJson);
         try {
             int port = server.getAddress().getPort();
             String baseUrl = "http://localhost:" + port;
@@ -210,7 +210,7 @@ public class NewsAPITest {
                 + "\"requestsUsed30Days\": 4500"
                 + "}";
 
-        HttpServer server = createMockServer("/v1/usage", 200, responseJson);
+        HttpServer server = createMockServer("/usage", 200, responseJson);
         try {
             int port = server.getAddress().getPort();
             String baseUrl = "http://localhost:" + port;
@@ -236,7 +236,7 @@ public class NewsAPITest {
     private static void testSearchRaw() throws Exception {
         String csvContent = "title,description,url\nTest,Desc,https://example.com";
 
-        HttpServer server = createMockServer("/v1/search", 200, csvContent);
+        HttpServer server = createMockServer("/search", 200, csvContent);
         try {
             int port = server.getAddress().getPort();
             String baseUrl = "http://localhost:" + port;
@@ -260,7 +260,7 @@ public class NewsAPITest {
     private static void testError400WithJsonBody() throws Exception {
         String errorJson = "{\"detail\": {\"message\": \"Missing required parameter: q\"}}";
 
-        HttpServer server = createMockServer("/v1/search", 400, errorJson);
+        HttpServer server = createMockServer("/search", 400, errorJson);
         try {
             int port = server.getAddress().getPort();
             String baseUrl = "http://localhost:" + port;
@@ -288,7 +288,7 @@ public class NewsAPITest {
     private static void testError401Default() throws Exception {
         String nonJsonBody = "Unauthorized access";
 
-        HttpServer server = createMockServer("/v1/search", 401, nonJsonBody);
+        HttpServer server = createMockServer("/search", 401, nonJsonBody);
         try {
             int port = server.getAddress().getPort();
             String baseUrl = "http://localhost:" + port;
@@ -314,7 +314,7 @@ public class NewsAPITest {
     private static void testError429() throws Exception {
         String errorJson = "{\"detail\": {\"message\": \"Rate limit exceeded\"}}";
 
-        HttpServer server = createMockServer("/v1/search", 429, errorJson);
+        HttpServer server = createMockServer("/search", 429, errorJson);
         try {
             int port = server.getAddress().getPort();
             String baseUrl = "http://localhost:" + port;
@@ -361,7 +361,7 @@ public class NewsAPITest {
         final boolean[] requestReceived = {false};
 
         HttpServer server = HttpServer.create(new InetSocketAddress(0), 0);
-        server.createContext("/v1/search", new HttpHandler() {
+        server.createContext("/search", new HttpHandler() {
             @Override
             public void handle(HttpExchange exchange) throws IOException {
                 requestReceived[0] = true;
