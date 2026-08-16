@@ -1,12 +1,36 @@
 {
   "packages": {
-    "python-sdk": { "release-type": "python", "package-name": "allnewsapi" },
-    "javascript-sdk": { "release-type": "node", "package-name": "allnewsapi" },
-    "go-sdk": { "release-type": "go", "package-name": "allnewsapi" },
-    "java-sdk": { "release-type": "maven", "package-name": "com.allnewsapi:allnewsapi" },
-    "php-sdk": { "release-type": "php", "package-name": "allnewsapi/allnewsapi" },
-    "ruby-sdk": { "release-type": "ruby", "package-name": "allnewsapi" }
+    "python-sdk": {
+      "release-type": "python",
+      "package-name": "allnewsapi",
+      "component": "python-sdk"
+    },
+    "javascript-sdk": {
+      "release-type": "node",
+      "package-name": "allnewsapi",
+      "component": "javascript-sdk"
+    },
+    "go-sdk": {
+      "release-type": "go",
+      "package-name": "allnewsapi",
+      "component": "go-sdk"
+    },
+    "java-sdk": {
+      "release-type": "maven",
+      "package-name": "com.allnewsapi:allnewsapi",
+      "component": "java-sdk"
+    },
+    "php-sdk": {
+      "release-type": "php",
+      "package-name": "allnewsapi/allnewsapi",
+      "component": "php-sdk"
+    },
+    "ruby-sdk": {
+      "release-type": "ruby",
+      "package-name": "allnewsapi",
+      "component": "ruby-sdk"
+    }
   },
-  "tag-separator": "-v",
+  "tag-separator": "-",
   "include-component-in-tag": true
 }
