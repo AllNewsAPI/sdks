@@ -20,7 +20,7 @@ jobs:
         working-directory: php-sdk
 
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
       - name: Set up PHP
         uses: shivammathur/setup-php@04c7ca5cdf3849c2db2777e8d3d97c6932b57601 # 2.9.0
