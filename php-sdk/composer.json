@@ -2,8 +2,13 @@
     "name": "allnewsapi/allnewsapi",
     "description": "PHP SDK for AllNewsAPI",
     "type": "library",
-    "version": "0.1.0",
-    "keywords": ["allnewsapi", "news", "api", "sdk"],
+    "version": "0.2.0",
+    "keywords": [
+        "allnewsapi",
+        "news",
+        "api",
+        "sdk"
+    ],
     "license": "MIT",
     "authors": [
         {
