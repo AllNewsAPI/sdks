@@ -1,0 +1,39 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+.venv/
+dist/
+build/
+*.whl
+
+# Node.js / TypeScript
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Go
+vendor/
+
+# Java
+target/
+*.class
+*.jar
+
+# PHP
+vendor/
+
+# Ruby
+.bundle/
+pkg/
+
+# Common
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+.env
+.env.*
+*.log

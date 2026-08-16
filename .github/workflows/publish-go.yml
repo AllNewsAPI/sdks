@@ -1,0 +1,37 @@
+name: Publish Go SDK
+
+on:
+  push:
+    tags:
+      - 'go-sdk-v*'
+
+permissions:
+  contents: read
+
+# Go modules are published automatically when a tag is pushed.
+# pkg.go.dev indexes the module once the tag exists in the repository.
+# This workflow validates the module and triggers pkg.go.dev indexing.
+
+jobs:
+  publish:
+    name: Validate and index Go module
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go-sdk
+
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Set up Go
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5.6.0
+        with:
+          go-version: '1.22'
+
+      - name: Verify module
+        run: go mod verify
+
+      - name: Request pkg.go.dev indexing
+        run: |
+          GOPROXY=https://proxy.golang.org GO111MODULE=on \
+            go list -m github.com/AllNewsAPI/go-sdk@${GITHUB_REF_NAME#go-sdk-}

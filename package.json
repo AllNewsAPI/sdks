@@ -1,0 +1,38 @@
+{
+  "name": "allnewsapi-sdks",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Official SDKs for the AllNewsAPI",
+  "scripts": {
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0"
+  },
+  "lint-staged": {
+    "python-sdk/src/**/*.py": [
+      "bash -c 'cd python-sdk && ruff check --fix'"
+    ],
+    "python-sdk/tests/**/*.py": [
+      "bash -c 'cd python-sdk && ruff check --fix'"
+    ],
+    "javascript-sdk/src/**/*.ts": [
+      "bash -c 'cd javascript-sdk && npx eslint --fix'",
+      "bash -c 'cd javascript-sdk && npx prettier --write'"
+    ],
+    "go-sdk/**/*.go": [
+      "bash -c 'cd go-sdk && gofmt -w .'"
+    ],
+    "php-sdk/src/**/*.php": [
+      "bash -c 'cd php-sdk && php -l'"
+    ],
+    "ruby-sdk/lib/**/*.rb": [
+      "bash -c 'cd ruby-sdk && ruby -c'"
+    ]
+  }
+}

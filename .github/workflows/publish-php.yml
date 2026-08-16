@@ -1,0 +1,41 @@
+name: Publish PHP SDK
+
+on:
+  push:
+    tags:
+      - 'php-sdk-v*'
+
+permissions:
+  contents: read
+
+# Packagist auto-updates from GitHub via webhook.
+# This workflow validates the package and optionally triggers the Packagist webhook.
+
+jobs:
+  publish:
+    name: Validate and notify Packagist
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: php-sdk
+
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@04c7ca5cdf3849c2db2777e8d3d97c6932b57601 # 2.9.0
+        with:
+          php-version: '8.2'
+          extensions: curl, json
+        env:
+          COMPOSER_NO_INTERACTION: 1
+
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Notify Packagist
+        if: ${{ secrets.PACKAGIST_TOKEN != '' }}
+        run: |
+          curl -s -X POST \
+            "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_TOKEN }}" \
+            -d '{"repository":{"url":"https://github.com/${{ github.repository }}"}}'
