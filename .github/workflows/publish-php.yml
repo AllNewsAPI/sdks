@@ -8,9 +8,6 @@ on:
 permissions:
   contents: read
 
-# Packagist auto-updates from GitHub via webhook.
-# This workflow validates the package and optionally triggers the Packagist webhook.
-
 jobs:
   publish:
     name: Validate and notify Packagist
@@ -26,16 +23,19 @@ jobs:
         uses: shivammathur/setup-php@04c7ca5cdf3849c2db2777e8d3d97c6932b57601 # 2.9.0
         with:
           php-version: '8.2'
-          extensions: curl, json
-        env:
-          COMPOSER_NO_INTERACTION: 1
 
       - name: Validate composer.json
         run: composer validate --strict
 
       - name: Notify Packagist
-        if: ${{ secrets.PACKAGIST_TOKEN != '' }}
+        env:
+          PACKAGIST_USERNAME: ${{ secrets.PACKAGIST_USERNAME }}
+          PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
         run: |
-          curl -s -X POST \
-            "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_TOKEN }}" \
-            -d '{"repository":{"url":"https://github.com/${{ github.repository }}"}}'
+          if [ -n "$PACKAGIST_TOKEN" ]; then
+            curl -s -X POST \
+              "https://packagist.org/api/update-package?username=${PACKAGIST_USERNAME}&apiToken=${PACKAGIST_TOKEN}" \
+              -d '{"repository":{"url":"https://github.com/${{ github.repository }}"}}'
+          else
+            echo "PACKAGIST_TOKEN not set, skipping notification"
+          fi

@@ -9,9 +9,6 @@ on:
 jobs:
   python:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'push' ||
-      contains(join(github.event.pull_request.changed_files.*.filename, ','), 'python-sdk/')
     defaults:
       run:
         working-directory: python-sdk
@@ -29,9 +26,6 @@ jobs:
 
   typescript:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'push' ||
-      contains(join(github.event.pull_request.changed_files.*.filename, ','), 'javascript-sdk/')
     defaults:
       run:
         working-directory: javascript-sdk
@@ -53,9 +47,6 @@ jobs:
 
   go:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'push' ||
-      contains(join(github.event.pull_request.changed_files.*.filename, ','), 'go-sdk/')
     defaults:
       run:
         working-directory: go-sdk
@@ -75,9 +66,6 @@ jobs:
 
   java:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'push' ||
-      contains(join(github.event.pull_request.changed_files.*.filename, ','), 'java-sdk/')
     defaults:
       run:
         working-directory: java-sdk
@@ -96,9 +84,6 @@ jobs:
 
   php:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'push' ||
-      contains(join(github.event.pull_request.changed_files.*.filename, ','), 'php-sdk/')
     defaults:
       run:
         working-directory: php-sdk
@@ -121,9 +106,6 @@ jobs:
 
   ruby:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'push' ||
-      contains(join(github.event.pull_request.changed_files.*.filename, ','), 'ruby-sdk/')
     defaults:
       run:
         working-directory: ruby-sdk
