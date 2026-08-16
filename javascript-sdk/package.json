@@ -1,6 +1,6 @@
 {
   "name": "allnewsapi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "AllNewsAPI SDK for TypeScript/JavaScript",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -18,7 +18,9 @@
       }
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },
@@ -29,7 +31,12 @@
     "lint": "eslint src/",
     "format": "prettier --check src/"
   },
-  "keywords": ["allnewsapi", "news", "api", "sdk"],
+  "keywords": [
+    "allnewsapi",
+    "news",
+    "api",
+    "sdk"
+  ],
   "author": "AllNewsAPI",
   "license": "MIT",
   "devDependencies": {
