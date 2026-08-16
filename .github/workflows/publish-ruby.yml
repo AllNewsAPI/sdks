@@ -3,7 +3,7 @@ name: Publish Ruby SDK
 on:
   push:
     tags:
-      - 'ruby-sdk-v*'
+      - 'ruby-sdk/v*'
 
 permissions:
   contents: read

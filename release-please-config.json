@@ -18,7 +18,8 @@
     "java-sdk": {
       "release-type": "maven",
       "package-name": "com.allnewsapi:allnewsapi",
-      "component": "java-sdk"
+      "component": "java-sdk",
+      "skip-snapshot": true
     },
     "php-sdk": {
       "release-type": "php",
