@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/AllNewsAPI/sdks/compare/ruby-sdk/v0.2.0...ruby-sdk/v0.2.1) (2026-08-16)
+
+
+### Bug Fixes
+
+* **release:** handle Ruby hardcoded tag separator and disable Java snapshots ([c30d7f1](https://github.com/AllNewsAPI/sdks/commit/c30d7f1bb581a9243a202ae6d30e96f9bcefb470))
+
 ## [0.2.0](https://github.com/AllNewsAPI/sdks/compare/ruby-sdk-v0.1.0...ruby-sdk/v0.2.0) (2026-08-16)
 
 
