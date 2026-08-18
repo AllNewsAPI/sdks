@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/AllNewsAPI/sdks/compare/java-sdk-v0.2.0...java-sdk-v0.2.1) (2026-08-18)
+
+
+### Bug Fixes
+
+* **java-sdk:** add support section with issue link to README ([1977265](https://github.com/AllNewsAPI/sdks/commit/1977265d1cb9b8dd772e2d69493f294cb4a597b2))
+
 ## [0.2.0](https://github.com/AllNewsAPI/sdks/compare/java-sdk-v0.1.0...java-sdk-v0.2.0) (2026-08-16)
 
 

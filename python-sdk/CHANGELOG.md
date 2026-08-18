@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/AllNewsAPI/sdks/compare/python-sdk-v0.1.1...python-sdk-v0.1.2) (2026-08-18)
+
+
+### Bug Fixes
+
+* **python-sdk:** add support section with issue link to README ([f3cb349](https://github.com/AllNewsAPI/sdks/commit/f3cb349f26106166f911946662fa9cf34d04cba7))
+
 ## [0.1.1](https://github.com/AllNewsAPI/sdks/compare/python-sdk-v0.1.0...python-sdk-v0.1.1) (2026-08-16)
 
 

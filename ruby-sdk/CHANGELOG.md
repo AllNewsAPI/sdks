@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/AllNewsAPI/sdks/compare/ruby-sdk/v0.2.1...ruby-sdk/v0.2.2) (2026-08-18)
+
+
+### Bug Fixes
+
+* **ruby-sdk:** add support section with issue link to README ([f2ae617](https://github.com/AllNewsAPI/sdks/commit/f2ae6179d3b8f16db724a2d92878f7700c859dc0))
+
 ## [0.2.1](https://github.com/AllNewsAPI/sdks/compare/ruby-sdk/v0.2.0...ruby-sdk/v0.2.1) (2026-08-16)
 
 

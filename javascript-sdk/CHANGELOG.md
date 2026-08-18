@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/AllNewsAPI/sdks/compare/javascript-sdk-v0.2.0...javascript-sdk-v0.2.1) (2026-08-18)
+
+
+### Bug Fixes
+
+* **javascript-sdk:** add support section with issue link to README ([985705f](https://github.com/AllNewsAPI/sdks/commit/985705f94c1ab3bca57e36e75e2b387e943fe5bc))
+
 ## [0.2.0](https://github.com/AllNewsAPI/sdks/compare/javascript-sdk-v0.1.0...javascript-sdk-v0.2.0) (2026-08-16)
 
 
