@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/AllNewsAPI/sdks/compare/php-sdk-v0.2.0...php-sdk-v0.2.1) (2026-08-18)
+
+
+### Bug Fixes
+
+* **php-sdk:** add support section with issue link to README ([6b1bc2b](https://github.com/AllNewsAPI/sdks/commit/6b1bc2b5e6d4f054b1052227e753dd3ffa827354))
+
 ## [0.2.0](https://github.com/AllNewsAPI/sdks/compare/php-sdk-v0.1.0...php-sdk-v0.2.0) (2026-08-16)
 
 

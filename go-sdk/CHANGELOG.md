@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/AllNewsAPI/sdks/compare/go-sdk-v0.2.0...go-sdk-v0.2.1) (2026-08-18)
+
+
+### Bug Fixes
+
+* **go-sdk:** add support section with issue link to README ([7920f52](https://github.com/AllNewsAPI/sdks/commit/7920f5272aa3c6e4193ef1ff638ad94f3bbd1756))
+
 ## [0.2.0](https://github.com/AllNewsAPI/sdks/compare/go-sdk-v0.1.0...go-sdk-v0.2.0) (2026-08-16)
 
 
