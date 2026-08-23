@@ -4,6 +4,11 @@ on:
   push:
     tags:
       - 'ruby-sdk/v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish (e.g. ruby-sdk/v0.2.2). Runs current workflow logic against that ref.'
+        required: true
 
 permissions:
   contents: read
@@ -18,6 +23,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ inputs.tag || github.ref }}
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@3ff19f5e2baf30647122352b96108b1fbe250c64 # v1.299.0

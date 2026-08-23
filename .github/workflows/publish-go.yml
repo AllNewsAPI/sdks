@@ -4,6 +4,11 @@ on:
   push:
     tags:
       - 'go-sdk-v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish (e.g. go-sdk-v0.2.1). Runs current workflow logic against that ref.'
+        required: true
 
 permissions:
   contents: read
@@ -22,6 +27,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          ref: ${{ inputs.tag || github.ref }}
 
       - name: Set up Go
         uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5.6.0
@@ -32,6 +39,8 @@ jobs:
         run: go mod verify
 
       - name: Request pkg.go.dev indexing
+        env:
+          REF_NAME: ${{ inputs.tag || github.ref_name }}
         run: |
           GOPROXY=https://proxy.golang.org GO111MODULE=on \
-            go list -m github.com/AllNewsAPI/sdks/go-sdk@${GITHUB_REF_NAME#go-sdk-}
+            go list -m github.com/AllNewsAPI/sdks/go-sdk@${REF_NAME#go-sdk-}
