@@ -13,7 +13,8 @@
     "go-sdk": {
       "release-type": "go",
       "package-name": "allnewsapi",
-      "component": "go-sdk"
+      "component": "go-sdk",
+      "tag-separator": "/"
     },
     "java-sdk": {
       "release-type": "maven",

@@ -3,11 +3,11 @@ name: Publish Go SDK
 on:
   push:
     tags:
-      - 'go-sdk-v*'
+      - 'go-sdk/v*'
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag to publish (e.g. go-sdk-v0.2.1). Runs current workflow logic against that ref.'
+        description: 'Tag to publish (e.g. go-sdk/v0.2.1). Runs current workflow logic against that ref.'
         required: true
 
 permissions:
@@ -16,6 +16,11 @@ permissions:
 # Go modules are published automatically when a tag is pushed.
 # pkg.go.dev indexes the module once the tag exists in the repository.
 # This workflow validates the module and triggers pkg.go.dev indexing.
+#
+# Tags use the 'go-sdk/v<version>' format (slash, not dash) because the
+# module lives in a subdirectory of this monorepo. Go's module proxy
+# requires subdirectory modules to be tagged as '<subdir>/v<version>'.
+# See: https://go.dev/ref/mod#vcs-version
 
 jobs:
   publish:
@@ -43,4 +48,4 @@ jobs:
           REF_NAME: ${{ inputs.tag || github.ref_name }}
         run: |
           GOPROXY=https://proxy.golang.org GO111MODULE=on \
-            go list -m github.com/AllNewsAPI/sdks/go-sdk@${REF_NAME#go-sdk-}
+            go list -m github.com/AllNewsAPI/sdks/go-sdk@${REF_NAME#go-sdk/}
