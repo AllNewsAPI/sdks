@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/AllNewsAPI/sdks/compare/java-sdk-v0.2.1...java-sdk-v0.2.2) (2026-08-23)
+
+
+### Bug Fixes
+
+* **java-sdk:** update groupId to com.allnewsapi.com in pom.xml ([abc1737](https://github.com/AllNewsAPI/sdks/commit/abc1737be454210425a755760323db339849f62a))
+
 ## [0.2.1](https://github.com/AllNewsAPI/sdks/compare/java-sdk-v0.2.0...java-sdk-v0.2.1) (2026-08-18)
 
 
