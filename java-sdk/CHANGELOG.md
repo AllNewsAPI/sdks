@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/AllNewsAPI/sdks/compare/java-sdk-v0.2.2...java-sdk-v0.2.3) (2026-08-23)
+
+
+### Bug Fixes
+
+* **java-sdk:** correct Maven groupId to match verified namespace ([ed03231](https://github.com/AllNewsAPI/sdks/commit/ed0323165840238fc7c35a83cc32a49e8635de94))
+
 ## [0.2.2](https://github.com/AllNewsAPI/sdks/compare/java-sdk-v0.2.1...java-sdk-v0.2.2) (2026-08-23)
 
 
