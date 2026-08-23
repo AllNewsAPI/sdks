@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	allnewsapi "github.com/AllNewsAPI/go-sdk"
+	allnewsapi "github.com/AllNewsAPI/sdks/go-sdk"
 )
 
 func main() {

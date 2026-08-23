@@ -12,7 +12,7 @@ This monorepo contains **6 language SDKs**, each providing a consistent interfac
 |-----|-----------|---------|
 | Python | [`python-sdk/`](./python-sdk) | `pip install allnewsapi` |
 | TypeScript | [`javascript-sdk/`](./javascript-sdk) | `npm install allnewsapi` |
-| Go | [`go-sdk/`](./go-sdk) | `go get github.com/AllNewsAPI/go-sdk` |
+| Go | [`go-sdk/`](./go-sdk) | `go get github.com/AllNewsAPI/sdks/go-sdk` |
 | Java | [`java-sdk/`](./java-sdk) | Maven Central |
 | PHP | [`php-sdk/`](./php-sdk) | `composer require allnewsapi/allnewsapi` |
 | Ruby | [`ruby-sdk/`](./ruby-sdk) | `gem install allnewsapi` |
@@ -62,7 +62,7 @@ for (const article of response.articles) {
 ### Go
 
 ```bash
-go get github.com/AllNewsAPI/go-sdk
+go get github.com/AllNewsAPI/sdks/go-sdk
 ```
 
 ```go
@@ -70,7 +70,7 @@ package main
 
 import (
     "fmt"
-    newsapi "github.com/AllNewsAPI/go-sdk"
+    newsapi "github.com/AllNewsAPI/sdks/go-sdk"
 )
 
 func main() {

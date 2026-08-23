@@ -34,4 +34,4 @@ jobs:
       - name: Request pkg.go.dev indexing
         run: |
           GOPROXY=https://proxy.golang.org GO111MODULE=on \
-            go list -m github.com/AllNewsAPI/go-sdk@${GITHUB_REF_NAME#go-sdk-}
+            go list -m github.com/AllNewsAPI/sdks/go-sdk@${GITHUB_REF_NAME#go-sdk-}

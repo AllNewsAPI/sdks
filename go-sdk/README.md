@@ -1,6 +1,6 @@
 # AllNewsAPI Go SDK
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/AllNewsAPI/go-sdk.svg)](https://pkg.go.dev/github.com/AllNewsAPI/go-sdk)
+[![Go Reference](https://pkg.go.dev/badge/github.com/AllNewsAPI/sdks/go-sdk.svg)](https://pkg.go.dev/github.com/AllNewsAPI/sdks/go-sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A lightweight Go SDK for the [AllNewsAPI](https://allnewsapi.com) with zero external dependencies.
@@ -8,7 +8,7 @@ A lightweight Go SDK for the [AllNewsAPI](https://allnewsapi.com) with zero exte
 ## Installation
 
 ```bash
-go get github.com/AllNewsAPI/go-sdk
+go get github.com/AllNewsAPI/sdks/go-sdk
 ```
 
 ## Quick Start
@@ -20,7 +20,7 @@ import (
     "fmt"
     "log"
 
-    newsapi "github.com/AllNewsAPI/go-sdk"
+    newsapi "github.com/AllNewsAPI/sdks/go-sdk"
 )
 
 func main() {
