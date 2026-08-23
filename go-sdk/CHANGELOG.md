@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/AllNewsAPI/sdks/compare/go-sdk-v0.2.1...go-sdk/v0.2.2) (2026-08-23)
+
+
+### Bug Fixes
+
+* **go-sdk,php-sdk:** resolve publish failures from go-sdk-v0.2.1/php-sdk-v0.2.1 release ([529d400](https://github.com/AllNewsAPI/sdks/commit/529d400e48796611e407b9840c387e63cd096f87))
+
 ## [0.2.1](https://github.com/AllNewsAPI/sdks/compare/go-sdk-v0.2.0...go-sdk-v0.2.1) (2026-08-18)
 
 
