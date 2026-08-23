@@ -1,6 +1,6 @@
 # AllNewsAPI Java SDK
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.allnewsapi/allnewsapi-java-sdk)](https://central.sonatype.com/artifact/com.allnewsapi/allnewsapi-java-sdk)
+[![Maven Central](https://img.shields.io/maven-central/v/com.allnewsapi.com/allnewsapi)](https://central.sonatype.com/artifact/com.allnewsapi.com/allnewsapi)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A lightweight Java SDK for the [AllNewsAPI](https://allnewsapi.com) with zero external dependencies. Uses `java.net.HttpURLConnection` only.
@@ -11,8 +11,8 @@ A lightweight Java SDK for the [AllNewsAPI](https://allnewsapi.com) with zero ex
 
 ```xml
 <dependency>
-    <groupId>com.allnewsapi</groupId>
-    <artifactId>allnewsapi-java-sdk</artifactId>
+    <groupId>com.allnewsapi.com</groupId>
+    <artifactId>allnewsapi</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -20,7 +20,7 @@ A lightweight Java SDK for the [AllNewsAPI](https://allnewsapi.com) with zero ex
 ### Gradle
 
 ```groovy
-implementation 'com.allnewsapi:allnewsapi-java-sdk:1.0.0'
+implementation 'com.allnewsapi.com:allnewsapi:1.0.0'
 ```
 
 ## Quick Start

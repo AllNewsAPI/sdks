@@ -18,7 +18,7 @@
     },
     "java-sdk": {
       "release-type": "maven",
-      "package-name": "com.allnewsapi:allnewsapi",
+      "package-name": "com.allnewsapi.com:allnewsapi",
       "component": "java-sdk",
       "skip-snapshot": true
     },

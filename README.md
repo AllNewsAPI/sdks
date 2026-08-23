@@ -93,7 +93,7 @@ func main() {
 
 ```xml
 <dependency>
-    <groupId>com.allnewsapi</groupId>
+    <groupId>com.allnewsapi.com</groupId>
     <artifactId>allnewsapi</artifactId>
     <version>0.1.0</version>
 </dependency>
