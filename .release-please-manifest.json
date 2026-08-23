@@ -2,7 +2,7 @@
   "python-sdk": "0.1.2",
   "javascript-sdk": "0.2.1",
   "go-sdk": "0.2.2",
-  "java-sdk": "0.2.1",
+  "java-sdk": "0.2.2",
   "php-sdk": "0.2.1",
   "ruby-sdk": "0.2.2"
 }
