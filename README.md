@@ -1,6 +1,6 @@
 # AllNewsAPI SDKs
 
-![CI](https://github.com/AllNewsAPI/allnewsapi-sdks/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/AllNewsAPI/sdks/actions/workflows/ci.yml/badge.svg)
 
 Official SDKs for the [AllNewsAPI](https://allnewsapi.com) — a news aggregation REST API providing search, headlines, and usage endpoints across 50,000+ sources worldwide.
 
